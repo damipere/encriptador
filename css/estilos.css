@@ -170,7 +170,7 @@ body{
     margin: 0px;
    }
 }
-@media screen and (max-width:600px)
+@media screen and (min-width:600px)
 {
  .caja1{
  background-color:red;
