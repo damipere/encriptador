@@ -169,6 +169,10 @@ body{
     display: none;
     margin: 0px;
    }
-   
-   
+}
+@media screen and (max-width:600px)
+{
+ .caja1{
+ background-color:red;
+ }
 }
