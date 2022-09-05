@@ -6,13 +6,11 @@ const resultado =document.getElementById("resultado");
 const copiarboton =document.getElementById("copiar");
 //obtenemos todos los campos a ocupar u ocultar
 function encripta(){
-
-  
-  resultado.style.display= "block";
-  //muestra el textarea
-    let text= textareahtml.value;
-    //primero valida que venga sin mayusculas o caracteres especiales
+  let text= textareahtml.value;
+   //primero valida que venga sin mayusculas o caracteres especiales
     if(validar(text)){
+      resultado.style.display= "block";
+       //muestra el textarea
       text=text.replace(/[aeiou]/g,function(x){
         switch(x){
           case "a":
@@ -32,7 +30,6 @@ function encripta(){
           break
         }
       });
-
       //empieza a buscar vocales y remplaza dependiendo de cual vocal es
       oculta.style.display = "none";
       oculta2.style.display = "none";
@@ -47,12 +44,12 @@ function encripta(){
     }
 }
 function desencriptar(){
-//muestra el textarea
-  resultado.style.display= "block";
   let text=textareahtml.value;
-  var letras = ["ai","enter","imes","ober","ufat"]
   //primero valida que venga sin mayusculas o caracteres especiales
   if(validar(text)){
+    //muestra el textarea
+  resultado.style.display= "block";
+  var letras = ["ai","enter","imes","ober","ufat"]
     // hace un recorrido del array donde se almaceno las vocales encriptadas y las encuentra empieza a remplazar
   for(var i=0;i<letras.length;i++){
     switch(letras[i]){
