@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout"> <!--Caja grid-->
+        <div class="caja1"> <!--   caja del logo -->
+            <h3 class="logo">a</h3>
+        </div>
+        <div class="caja5"> <!-- caja del texto para encriptar por el usuario-->
+          <textarea id="texto" class="texto" placeholder="Ingresa el texto aqui"></textarea>
+        </div>
+        <div class="caja6"> <!--caja para mostrar el texto encriptado o desencriptado-->
+            <img id="imgbus" src="img/buscando.png" alt="buscando" class="imgbuscando">
+             <p id="textencrip" class="desci">Ningún mensaje fue <br> encontrado</p>
+             <p id="subtexto" class="subtexto">Ingresa el texto que desees encriptar o desencriptar.</p>
+             <textarea style="display: none;" readonly id="resultado" class="resultados"></textarea> <!--Textarea donde se colocara el texto encriptado o desencriptado-->
+        </div>
+        <div class="caja8"> <!--Caja para las advertencias y botones de encriptar y desencriptar-->
+          <div class="alertas">
+          <img src="img/alerta.png" alt="alerta" class="alerta">
+           <p class="advertencia">Solo letras minúsculas y sin acentos</p>
+          </div>
+          <div class="botonera"> 
+           <button class="encripta" onclick="encripta()">Encripta</button>
+           <button class="descencripta" onclick="desencriptar()">Desencencripta</button>
+          </div>
+        </div>
+        <div class="caja9"> <!--Caja para boton copiar-->
+        <center> <button id="copiar" class="copiar" onclick="copiar()">Copiar</button></center>
+      </div>
+    </div>
+</body>
+<script src="js/javascript.js"></script>
+</html>

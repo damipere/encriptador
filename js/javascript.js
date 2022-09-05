@@ -4,10 +4,14 @@ const oculta2 = document.getElementById("subtexto");
 const textoencriptado =document.getElementById("textencrip");
 const resultado =document.getElementById("resultado");
 const copiarboton =document.getElementById("copiar");
-
+//obtenemos todos los campos a ocupar u ocultar
 function encripta(){
+
+  
   resultado.style.display= "block";
+  //muestra el textarea
     let text= textareahtml.value;
+    //primero valida que venga sin mayusculas o caracteres especiales
     if(validar(text)){
       text=text.replace(/[aeiou]/g,function(x){
         switch(x){
@@ -28,21 +32,28 @@ function encripta(){
           break
         }
       });
+
+      //empieza a buscar vocales y remplaza dependiendo de cual vocal es
       oculta.style.display = "none";
       oculta2.style.display = "none";
       textoencriptado.style.display = "none";
       copiarboton.style.display= "block";
       resultado.innerHTML= text;
+      // oculta lo que no se va a ocupar y muestra el boton copiar en este caso para los mediaquery es donde se ocupa esto
     }
     else{
       alert("Solo letras minusculas, sin acentos o caracteres especiales");
+      // en caso de error muestra un alert
     }
 }
 function desencriptar(){
+//muestra el textarea
   resultado.style.display= "block";
   let text=textareahtml.value;
   var letras = ["ai","enter","imes","ober","ufat"]
+  //primero valida que venga sin mayusculas o caracteres especiales
   if(validar(text)){
+    // hace un recorrido del array donde se almaceno las vocales encriptadas y las encuentra empieza a remplazar
   for(var i=0;i<letras.length;i++){
     switch(letras[i]){
       case "ai":
@@ -62,18 +73,22 @@ function desencriptar(){
       break
     }
   }
+  //muestra el cupon en estos casos se ocupa mas en mediaquerys
   copiarboton.style.display= "block";
   resultado.innerHTML= text;
   }
   else{
     alert("Solo letras minusculas, sin acentos o caracteres especiales");
+    //en caso de error muestra un alert
   }
 }
+
+//boton copiar
 function copiar(){
   resultado.select();
   document.execCommand("copy");
 }
-
+//valida por medio de un Regexp que venga solo minusculas y numeros
 function validar(valor) {
     let isValid = false;
     const pattern = new RegExp(/^[a-z0-9\s]+$/g);
